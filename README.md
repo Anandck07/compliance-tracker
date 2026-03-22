@@ -6,7 +6,40 @@ A full-stack MERN web app to track compliance tasks across multiple clients — 
 
 ## 🚀 Live Demo
 
-> **Deployed Link:** _Add your deployed URL here_
+> **Frontend (Vercel):** _Add your Vercel URL here_
+> **Backend (Render):** _Add your Render URL here_
+
+---
+
+## 🌐 Deployment Guide
+
+### Backend → Render (free)
+
+1. Push code to GitHub
+2. Go to [https://render.com](https://render.com) → **New Web Service**
+3. Connect your GitHub repo, set **Root Directory** to `server`
+4. Set:
+   - **Build Command:** `npm install`
+   - **Start Command:** `node index.js`
+5. Add **Environment Variables**:
+   ```
+   MONGO_URI = <your MongoDB Atlas connection string>
+   PORT      = 5000
+   CLIENT_URL = <your Vercel frontend URL>
+   ```
+6. Click **Deploy** — copy the Render URL (e.g. `https://your-app.onrender.com`)
+
+> 💡 Use [MongoDB Atlas](https://www.mongodb.com/atlas) (free tier) for cloud database.
+
+### Frontend → Vercel
+
+1. Go to [https://vercel.com](https://vercel.com) → **New Project**
+2. Import your GitHub repo, set **Root Directory** to `client`
+3. Add **Environment Variable**:
+   ```
+   REACT_APP_API_URL = https://your-app.onrender.com/api
+   ```
+4. Click **Deploy** — your app is live!
 
 ---
 
